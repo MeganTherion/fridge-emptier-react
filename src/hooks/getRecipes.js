@@ -18,7 +18,8 @@ function useRecipes(props) {
 
     axios
       .request(options)
-      .then((res) => setResult(res.data[0].image))
+      .then((res) => setResult(res.data[0]))
+      .then((res) => console.log("res", res.data))
       .catch((err) => console.log(err));
   });
   return { result };
