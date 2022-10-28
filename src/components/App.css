@@ -1,0 +1,17 @@
+body {
+  background-color: bisque;
+  color: brown;
+  font-size: 1.5em;
+}
+
+.recipes-result-container {
+  margin: 1em auto;
+  width: 90%;
+  max-width: 500px;
+  border: 1px solid black;
+  border-radius: 25px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
