@@ -4,7 +4,8 @@ function RecipesResult(props) {
   
   return (
     <div className="recipes-result-container">
-       <img src={ result ? result.im : loadingGifUrl } alt="recipe here"/>
+       <img src={ result ? result.image : loadingGifUrl } alt="recipe here"/>
+       {result}
     </div>
   );
 }
