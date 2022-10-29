@@ -5,6 +5,13 @@ body {
   font-size: 1.5em;
 }
 
+#buttons {
+  display: flex;
+  width: 2em;
+  margin-top:.5em;
+  margin-left: 1em;
+  justify-content: space-between;
+}
 
 body > .recipes-result-container {
   margin: 1em auto;

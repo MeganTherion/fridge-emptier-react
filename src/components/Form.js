@@ -1,6 +1,7 @@
 import useRecipes from "../hooks/getRecipes";
 import {useState} from 'react';
 
+
 function Form() {
   const [inputFields, setInputFields] = useState([{}])
   const dataArray = [];
@@ -47,7 +48,10 @@ console.log("ingredients", dataArray)
         </div>
       )
     })}
-    <button onClick={addFields}>+</button><button onClick={(index) => removeFields(index)}>-</button>
+    <div id="buttons">
+    <img id="add-button" src="../favicon-32x32.png" onClick={addFields}>
+      </img>
+      <img id="remove-button" src="../favicon2-32x32.png" onClick={(index) => removeFields(index)}></img>
     {/* <input id="fridge-input-1" name="ingredient" type="text"></input><br></br>
     <input id="fridge-input-1" type="text"></input><br></br>
     <input id="fridge-input-1" type="text"></input><br></br> */}
@@ -58,7 +62,7 @@ console.log("ingredients", dataArray)
         {/* add more fields functionality here */}
         {/* <button className="button-add" type="button" onClick={() => addFormFields()}>another one</button> */}
       
-
+        </div>
       <h1>any restrictions?</h1>
       
 <div id="restrictions">
