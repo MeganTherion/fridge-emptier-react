@@ -1,12 +1,12 @@
 body {
   /* background-color: bisque; */
-  
+  padding: 1em;
   color: brown;
   font-size: 1.5em;
 }
 
 
-.recipes-result-container {
+body > .recipes-result-container {
   margin: 1em auto;
   width: 80%;
   /* background-color:bisque; opacity:  50%; */
@@ -15,4 +15,15 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+body > .looking-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4em;
+}
+
+body > .looking-container > img {
+  height: 5em;
 }

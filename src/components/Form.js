@@ -2,12 +2,14 @@ import useRecipes from "../hooks/getRecipes";
 import {useState} from 'react';
 
 function Form() {
-  const [inputFields, setInputFields] = useState([{ingredient:''}])
-
+  const [inputFields, setInputFields] = useState([{}])
+  const dataArray = [];
 const handleFormChange = (index, event) => {
+  
  const data = [...inputFields];
  data[index][event.target.name] = event.target.value;
  setInputFields(data);
+
 }
 
 const addFields = (e) => {
@@ -27,15 +29,17 @@ const removeFields = (e, index) => {
   //   alert(JSON.stringify(formValues));
   // }
 
+console.log("ingredients", dataArray)
   return (
     // onSubmit={handleSubmit}
 <form action="submit" >
     {inputFields.map((input, index) => {
+      dataArray.push(input.ingredient)
       return (
         <div key={index}>
           <input 
           type="text"
-          name='ingredient1'
+          name='ingredient'
           placeholder='Ingredient'
           value={input.name}
           onChange={event => handleFormChange(index, event)}
@@ -66,7 +70,8 @@ const removeFields = (e, index) => {
       <label for="keto">keto</label>
     
 </div>
-      <button className="button-submit" type="submit" onClick={useRecipes}>empty my fridge</button>
+{/* onClick={useRecipes(inputFields)} */}
+      <button className="button-submit" type="submit" >empty my fridge</button>
       {/* <div>{options}</div> */}
       </form>
   )

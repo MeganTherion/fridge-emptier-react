@@ -1,11 +1,16 @@
 function RecipesResult(props) {
   const { result } = props;
-  const loadingGifUrl = 'https://raw.githubusercontent.com/gist/Chuncheonian/0b458eb00f72d648e65d69ab08ca16b8/raw/91dfc8ec23b03cae760d6635d397aaf879f51c16/shiba.gif';
+  const loadingGifUrl = 'https://media.giphy.com/media/7EhiahshVQJMWngK3U/giphy.gif';
   
   return (
+    result ? 
     <div className="recipes-result-container">
-       <img src={ result ? result.image : loadingGifUrl } alt="recipe here"/>
+       <img src={result.image} alt="recipe here"/>
        {result}
+    </div>
+    :
+    <div className="looking-container">
+      <img src={loadingGifUrl} alt="looking here" />
     </div>
   );
 }
