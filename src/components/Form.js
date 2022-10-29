@@ -15,7 +15,7 @@ const handleFormChange = (index, event) => {
 
 const addFields = (e) => {
   e.preventDefault();
-  const newfield = { ingredient:'' }
+  const newfield = {};
   setInputFields([...inputFields, newfield])
 }
 

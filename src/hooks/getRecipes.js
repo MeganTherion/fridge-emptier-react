@@ -22,6 +22,7 @@ function useRecipes(props) {
       .then((res) => console.log("res", res.data))
       .catch((err) => console.log(err));
   });
+  console.log("props", props)
   return { result };
 }
 

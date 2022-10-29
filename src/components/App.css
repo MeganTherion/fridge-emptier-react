@@ -1,9 +1,15 @@
 body {
   /* background-color: bisque; */
   padding: 1em;
-  color: brown;
-  font-size: 1.5em;
+  color: rgb(244, 233, 233);
+  
+  /* font-size: 1.5em; */
 }
+ h1 {
+  color: #e5c40b;
+  font-size: 4em;
+  text-shadow: 2px 2px #213839;
+ }
 
 #buttons {
   display: flex;
@@ -11,6 +17,7 @@ body {
   margin-top:.5em;
   margin-left: 1em;
   justify-content: space-between;
+  filter: drop-shadow(2px 2px #353333);
 }
 
 body > .recipes-result-container {

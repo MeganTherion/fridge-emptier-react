@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <header title="fridgeEmptier 🥕🥦🧅" />
+        <header title="fridgeEmptier 🥕🥦🧅">🥕🥦🧅</header>
         <h1>what's in your fridge?</h1>
         <body>
         {/* should render "form" component here instead */}
