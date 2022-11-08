@@ -1,10 +1,10 @@
-import useRecipes from "../hooks/getRecipes";
+// import useRecipes from "./helper_functions/getRecipes";
 import RecipesResult from "./RecipesResult";
 import Form from "./Form";
 import "./App.css";
 
 function App() {
-  const { result } = useRecipes();
+  // const { result } = useRecipes();
   return (
     <div className="App">
       <header className="App-header">
