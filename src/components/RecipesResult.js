@@ -1,9 +1,8 @@
 function RecipesResult(props) {
   const { result } = props;
   const loadingGifUrl = 'https://media.giphy.com/media/7EhiahshVQJMWngK3U/giphy.gif';
-  console.log("result", {result})
+  
   return (
-    
     result ? 
     <div className="recipes-result-container">
        <img src={result.image} alt="recipe here"/>

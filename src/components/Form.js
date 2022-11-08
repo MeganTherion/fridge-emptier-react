@@ -2,6 +2,7 @@ import getRecipes from "./helper_functions/getRecipes";
 import { useState } from "react";
 import RecipesResult from "./RecipesResult";
 
+
 function Form() {
   const [inputFields, setInputFields] = useState([{}]);
   const [recipes, setRecipes] = useState("");
@@ -13,9 +14,12 @@ function Form() {
   };
   let handleSubmit = async (e) => {
     e.preventDefault();
-    const apiResult = getRecipes(dataArray.toString());
-    console.log("api result!", apiResult)
-    setRecipes(apiResult)
+    getRecipes(dataArray)
+   .then(data => {
+    console.log("data!", data)
+    setRecipes(data[0])
+   })
+   .catch(err => console.log(err))
   };
 
   // .then((res) => setRecipes(res.data[0]))
@@ -39,6 +43,7 @@ function Form() {
   };
 
   console.log("ingredients", dataArray);
+  console.log("recipes!", recipes)
   return (
     // onSubmit={handleSubmit}
     <form className="submit" action="submit" onSubmit={handleSubmit}>
@@ -82,7 +87,12 @@ function Form() {
       <button className="submit" type="submit">
         empty my fridge
       </button>
-      {/* <div>{options}</div> */}
+      <div className="recipes-result-container">
+      {recipes.title}<br></br>
+       <img src={recipes.image} alt="recipe here"/>
+       
+       {/* {recipes} */}
+    </div>
     </form>
   );
 }
