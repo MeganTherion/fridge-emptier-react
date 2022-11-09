@@ -1,12 +1,13 @@
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-export default async function useRecipes(props) {
-  const [result, setResult] = useState('');
+export default async function useRecipes(ingredients, restrictions) {
+  const [result, setResult] = useState("");
   const options = {
-    url: "https://api.spoonacular.com/recipes/findByIngredients",
+    url: "https://api.spoonacular.com/recipes/complexSearch",
     params: {
-      ingredients: props.toString(),
+      diet: restrictions.toString(),
+      includeIngredients: ingredients.toString(),
       number: "5",
       ignorePantry: "true",
       ranking: "1",
@@ -16,20 +17,18 @@ export default async function useRecipes(props) {
 
   useEffect(() => {
     const changeImgInterval = setInterval(() => {
+      console.log("state", restrictions);
       try {
-       axios.request(options)
-        .then(res => setResult(res.data[0]))
-        
+        axios.request(options).then((res) => setResult(res.data[0]));
+      } catch (error) {
+        console.log(error);
       }
-      catch (error) {
-        console.log(error)
-      }
-    }, 2000)
+    }, 2000);
 
-    const cleanUp = () => clearInterval(changeImgInterval)
+    const cleanUp = () => clearInterval(changeImgInterval);
 
     return cleanUp;
   }, []);
-  
-  return {result}
+
+  return { result };
 }

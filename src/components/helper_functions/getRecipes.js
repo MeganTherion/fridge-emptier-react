@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import RecipesResult from "../RecipesResult";
 
-const getRecipes = async function (dataArray, restrictionsArray) {
-console.log("restrictions", restrictionsArray)
+const getRecipes = async function (ingredients, restrictions) {
+  console.log("getRecipes restrictions", restrictions)
   const options = {
-    url: "https://api.spoonacular.com/recipes/findByIngredients",
+    url: "https://api.spoonacular.com/recipes/complexSearch",
     params: {
-      ingredients: dataArray.toString(),
+      diet: restrictions.toString(),
+      ingredients: ingredients.toString(),
       number: "5",
       ignorePantry: "true",
       ranking: "1",
