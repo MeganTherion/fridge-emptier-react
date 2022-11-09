@@ -41,7 +41,7 @@ function Form() {
     getRecipes(dataArray, restrictions)
       .then((data) => {
         console.log("data!", data);
-        setRecipes(data[0]);
+        setRecipes(data.results[0]);
       })
       .catch((err) => console.log(err));
   };
