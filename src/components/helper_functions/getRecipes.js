@@ -7,11 +7,10 @@ const getRecipes = async function (ingredients, restrictions) {
   const options = {
     url: "https://api.spoonacular.com/recipes/complexSearch",
     params: {
+      includeIngredients: ingredients.toString(),
       diet: restrictions.toString(),
-      ingredients: ingredients.toString(),
       number: "5",
       ignorePantry: "true",
-      ranking: "1",
       apiKey: "5ae1bff34b154844871d284080a1e961",
     },
   };
