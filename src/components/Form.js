@@ -88,9 +88,9 @@ function Form() {
         empty my fridge
       </button>
       <div className="recipes-result-container">
-      {recipes.title}<br></br>
-       <img src={recipes.image} alt="recipe here"/>
-       
+      {/* {recipes.title}<br></br>
+       <img src={recipes.image} alt="recipe here"/> */}
+       <RecipesResult {...recipes}/>
        {/* {recipes} */}
     </div>
     </form>

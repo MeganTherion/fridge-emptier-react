@@ -14,7 +14,7 @@ function App() {
         {/* should render "form" component here instead */}
         <Form />
         {/* needs to actually wait for result here and send the ingredients */}
-        <RecipesResult />
+      
         </body>
       </header>
     </div>
