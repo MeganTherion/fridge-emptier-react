@@ -2,46 +2,46 @@ import getRecipes from "./helper_functions/getRecipes";
 import { useEffect, useState } from "react";
 import RecipesResult from "./RecipesResult";
 
-
 function Form() {
+  const dataArray = []; //holds ingredients from user input
   const [inputFields, setInputFields] = useState([{}]);
-  const [checked, setChecked] = useState(false);
   const [restrictions, setRestrictions] = useState([]);
   const [recipes, setRecipes] = useState("");
   const loadingGifUrl =
     "https://media.giphy.com/media/7EhiahshVQJMWngK3U/giphy.gif";
 
-  const dataArray = [];
+  
   const handleFormChange = (index, event) => {
     const data = [...inputFields];
     data[index][event.target.name] = event.target.value;
     setInputFields(data);
   };
 
-  
   const handleRestrictionsChange = (e) => {
     const checked = e.target.checked;
     let value = e.target.value;
 
     if (checked) {
-   const newRestrictions = [...restrictions, e.target.value]
-  
-   setRestrictions(newRestrictions);
+      const newRestrictions = [...restrictions, e.target.value];
+
+      setRestrictions(newRestrictions);
     } else {
-    const newRestrictions = [...restrictions.filter(prev => prev !== e.target.value)]
-       
+      const newRestrictions = [
+        ...restrictions.filter((prev) => prev !== e.target.value),
+      ];
+
       console.log("**unchecked", newRestrictions);
-      setRestrictions(newRestrictions)
+      setRestrictions(newRestrictions);
     }
-    
   };
 
   let handleSubmit = async (e) => {
     e.preventDefault();
     getRecipes(dataArray, restrictions)
       .then((data) => {
-        console.log("data!", data);
+        
         setRecipes(data.results[0]);
+        console.log("data!", recipes);
       })
       .catch((err) => console.log(err));
   };
@@ -53,20 +53,26 @@ function Form() {
   };
 
   const removeFields = (e, index) => {
+    console.log("eee", e)
     e.preventDefault();
     const data = [...inputFields];
-    data.splice(index, 1);
+    data.splice(data.length-1, 1);
     setInputFields(data);
   };
 
   console.log("ingredients", dataArray);
   console.log("recipes!", recipes);
 
-useEffect(() => {
-  console.log("updating restrictions", restrictions)
-}, [restrictions])
+  useEffect(() => {
+    console.log("updating restrictions", restrictions);
+  }, [restrictions]);
 
-  const dietStuff = [{ id: "vegan" }, { id: "keto" }, { id: "gluten-free" }];
+  const dietStuff = [
+    { id: "vegan" },
+    { id: "ketogenic" },
+    { id: "gluten free" },
+    { id: "paleo" },
+  ];
   return (
     // onSubmit={handleSubmit}
     <form className="submit" action="submit" onSubmit={handleSubmit}>
@@ -107,7 +113,6 @@ useEffect(() => {
                 edge="end"
                 onChange={(e) => handleRestrictionsChange(e)}
                 value={d.id}
-                
               />
               <label for={d.id}>{d.id}</label>
             </div>

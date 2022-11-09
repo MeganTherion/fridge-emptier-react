@@ -15,10 +15,13 @@ const getRecipes = async function (ingredients, restrictions) {
     },
   };
 
-  console.log("props", options);
+  
 try {
   const {data: response} = await axios.request(options)
-  return response
+  console.log("response", response)
+  if (response.totalResults === 0)
+  return (<div><p>"error"</p></div>)
+  else return response;
 }
 catch (error) {
   console.log(error)
