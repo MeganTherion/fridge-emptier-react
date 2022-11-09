@@ -1,33 +1,50 @@
 import getRecipes from "./helper_functions/getRecipes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RecipesResult from "./RecipesResult";
 
 
 function Form() {
   const [inputFields, setInputFields] = useState([{}]);
+  const [checked, setChecked] = useState(false);
+  const [restrictions, setRestrictions] = useState([]);
   const [recipes, setRecipes] = useState("");
+  const loadingGifUrl =
+    "https://media.giphy.com/media/7EhiahshVQJMWngK3U/giphy.gif";
+
   const dataArray = [];
   const handleFormChange = (index, event) => {
     const data = [...inputFields];
     data[index][event.target.name] = event.target.value;
     setInputFields(data);
   };
+
+  
+  const handleRestrictionsChange = (e) => {
+    const checked = e.target.checked;
+    let value = e.target.value;
+
+    if (checked) {
+   const newRestrictions = [...restrictions, e.target.value]
+  
+   setRestrictions(newRestrictions);
+    } else {
+    const newRestrictions = [...restrictions.filter(prev => prev !== e.target.value)]
+       
+      console.log("**unchecked", newRestrictions);
+      setRestrictions(newRestrictions)
+    }
+    
+  };
+
   let handleSubmit = async (e) => {
     e.preventDefault();
     getRecipes(dataArray)
-   .then(data => {
-    console.log("data!", data)
-    setRecipes(data[0])
-   })
-   .catch(err => console.log(err))
+      .then((data) => {
+        console.log("data!", data);
+        setRecipes(data[0]);
+      })
+      .catch((err) => console.log(err));
   };
-
-  // .then((res) => setRecipes(res.data[0]))
-  // .then((res) => console.log("res", res.data))
-  // .catch((err) => console.log(err));
-
-  // };
-  // console.log("props", options)
 
   const addFields = (e) => {
     e.preventDefault();
@@ -43,7 +60,13 @@ function Form() {
   };
 
   console.log("ingredients", dataArray);
-  console.log("recipes!", recipes)
+  console.log("recipes!", recipes);
+
+useEffect(() => {
+  console.log("updating restrictions", restrictions)
+}, [restrictions])
+
+  const dietStuff = [{ id: "vegan" }, { id: "keto" }, { id: "gluten-free" }];
   return (
     // onSubmit={handleSubmit}
     <form className="submit" action="submit" onSubmit={handleSubmit}>
@@ -76,23 +99,32 @@ function Form() {
       <h1>any restrictions?</h1>
 
       <div id="restrictions">
-        <input type="checkbox" id="gf" name="gf" value="gluten-free" />
-        <label for="gf">gluten-free</label>
-        <input type="checkbox" id="vegan" name="vegan" value="vegan" />
-        <label for="vegan">vegan</label>
-        <input type="checkbox" id="keto" name="keto" value="keto" />
-        <label for="keto">keto</label>
+        {dietStuff.map((d) => {
+          return (
+            <div id="checkbox">
+              <input
+                type="checkbox"
+                edge="end"
+                onChange={(e) => handleRestrictionsChange(e)}
+                value={d.id}
+                
+              />
+              <label for={d.id}>{d.id}</label>
+            </div>
+          );
+        })}
       </div>
-      {/* onClick={useRecipes(inputFields)} */}
+
       <button className="submit" type="submit">
         empty my fridge
       </button>
       <div className="recipes-result-container">
-      {/* {recipes.title}<br></br>
-       <img src={recipes.image} alt="recipe here"/> */}
-       <RecipesResult {...recipes}/>
-       {/* {recipes} */}
-    </div>
+        {recipes ? (
+          <RecipesResult {...recipes} />
+        ) : (
+          <img id="looking" src={loadingGifUrl} />
+        )}
+      </div>
     </form>
   );
 }

@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import RecipesResult from "../RecipesResult";
 
-const getRecipes = async function (dataArray) {
-
+const getRecipes = async function (dataArray, restrictionsArray) {
+console.log("restrictions", restrictionsArray)
   const options = {
     url: "https://api.spoonacular.com/recipes/findByIngredients",
     params: {

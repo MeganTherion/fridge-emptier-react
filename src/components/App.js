@@ -2,9 +2,10 @@
 import RecipesResult from "./RecipesResult";
 import Form from "./Form";
 import "./App.css";
+import useRecipes from "../hooks/useRecipes";
 
 function App() {
-  // const { result } = useRecipes();
+  const { result } = useRecipes();
   return (
     <div className="App">
       <header className="App-header">

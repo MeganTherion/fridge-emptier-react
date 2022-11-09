@@ -1,17 +1,16 @@
+import "./RecipesResult.css"
 function RecipesResult(props) {
-  // const { result } = props;
+  const result  = props;
   const loadingGifUrl = 'https://media.giphy.com/media/7EhiahshVQJMWngK3U/giphy.gif';
-  
+
   return (
-    // result ? 
+ 
     <div className="recipes-result-container">
-     {props.title}
-       <img src={props.image}></img>
+      {/* <a href=`https://spoonacular.com/recipes/findByIngredients?${props}}` */}
+     {result.title}<br></br>
+       <img id="result" src={result.image}></img>
     </div>
-    // :
-    // <div className="looking-container">
-    //   <img src={loadingGifUrl} alt="looking here" />
-    // </div>
+    
   );
 }
 export default RecipesResult;
