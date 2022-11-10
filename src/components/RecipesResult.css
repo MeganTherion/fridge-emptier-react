@@ -1,3 +1,6 @@
-looking-container {
-  background-color: blue;
+.recipes-result-container {
+display:flex;
+flex-direction:column;
+
+
 }

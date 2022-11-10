@@ -10,7 +10,6 @@ function Form() {
   const loadingGifUrl =
     "https://media.giphy.com/media/7EhiahshVQJMWngK3U/giphy.gif";
 
-  
   const handleFormChange = (index, event) => {
     const data = [...inputFields];
     data[index][event.target.name] = event.target.value;
@@ -39,7 +38,6 @@ function Form() {
     e.preventDefault();
     getRecipes(dataArray, restrictions)
       .then((data) => {
-        
         setRecipes(data.results[0]);
         console.log("data!", recipes);
       })
@@ -53,10 +51,10 @@ function Form() {
   };
 
   const removeFields = (e, index) => {
-    console.log("eee", e)
+    console.log("eee", e);
     e.preventDefault();
     const data = [...inputFields];
-    data.splice(data.length-1, 1);
+    data.splice(data.length - 1, 1);
     setInputFields(data);
   };
 
@@ -68,10 +66,11 @@ function Form() {
   }, [restrictions]);
 
   const dietStuff = [
+    { id: "gluten-free" },
+    { id: "dairy-free" },
     { id: "vegan" },
-    { id: "ketogenic" },
-    { id: "gluten free" },
-    { id: "paleo" },
+    { id: "vegetarian" },
+    { id: "keto" },
   ];
   return (
     // onSubmit={handleSubmit}
@@ -79,7 +78,7 @@ function Form() {
       {inputFields.map((input, index) => {
         dataArray.push(input.ingredient);
         return (
-          <div key={index}>
+          <div className="ingredient" key={index}>
             <input
               type="text"
               name="ingredient"
@@ -95,7 +94,8 @@ function Form() {
           id="add-button"
           src="../favicon-32x32.png"
           onClick={addFields}
-        ></img>
+        ></img>     
+
         <img
           id="remove-button"
           src="../favicon2-32x32.png"
