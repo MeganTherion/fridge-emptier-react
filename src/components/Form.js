@@ -128,7 +128,7 @@ function Form() {
       </button>
       <div className="recipes-result-container" id="looking">
         {isLooking ? (
-          <img src={loadingGifUrl} />)
+          <img src={loadingGifUrl} id="looking" />)
           :
          (''
         )}

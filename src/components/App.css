@@ -134,14 +134,15 @@ body > form > .recipes-result-container {
   filter: drop-shadow(2px 2px #213839);
 }
 
-body > form > .recipes-result-container > #looking {
+
+/* body > form > .recipes-result-container > #looking {
   height: 50px;
-  /* background-color: blue; */
+  background-color: blue;
   margin-top: 0px;
   align-items: center;
   justify-content: center;
   height: 6em;
-}
+} */
 
 /* body > .looking-container > img {
   height: 5em;
