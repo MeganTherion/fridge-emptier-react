@@ -7,7 +7,7 @@ function Form() {
   const dataArray = []; //holds ingredients from user input
   const [inputFields, setInputFields] = useState([{}]);
   const [restrictions, setRestrictions] = useState([]);
-  const [recipes, setRecipes] = useState("");
+  const [recipes, setRecipes] = useState();
   const [isLooking, setIsLooking] = useState(true);
   const loadingGifUrl =
     "https://media.giphy.com/media/7EhiahshVQJMWngK3U/giphy.gif";
@@ -41,8 +41,8 @@ function Form() {
     getRecipes(dataArray, restrictions)
       .then((data) => {
       setIsLooking(false);
-        setRecipes(data.results[0]);
-        console.log("data!", recipes);
+        setRecipes(data.hits[0].recipe);
+        console.log("data!", data);
       })
       .catch((err) => console.log(err));
   };
@@ -73,7 +73,7 @@ function Form() {
     { id: "dairy-free" },
     { id: "vegan" },
     { id: "vegetarian" },
-    { id: "keto" },
+    { id: "keto-friendly" },
   ];
   return (
     // onSubmit={handleSubmit}
