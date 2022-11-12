@@ -6,7 +6,11 @@ Add ingredients in your fridge, and check any restrictions. Have fun!
 This app is deployed at https://megantherion.github.io/fridge-emptier-react/
 
 ## Screenshots:
-!["start"](https://github.com/MeganTherion/fridge-emptier-react/blob/master/imgs/Screenshot%2022-11-12%at%9.56.51%AM.png?raw=true "Optional Title")
+!["start"](https://github.com/MeganTherion/fridge-emptier-react/blob/main/imgs/Screenshot%202022-11-12%20at%209.56.51%20AM.png?raw=true? "Optional Title")
+
+!["start"](https://github.com/MeganTherion/fridge-emptier-react/blob/main/imgs/Screenshot%202022-11-12%20at%209.57.34%20AM.png?raw=true "Optional Title")
+
+!["start"](https://github.com/MeganTherion/fridge-emptier-react/blob/main/imgs/Screenshot%202022-11-12%20at%209.58.35%20AM.png?raw=true "Optional Title")
 
 
 
