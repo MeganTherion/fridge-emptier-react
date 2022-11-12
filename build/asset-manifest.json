@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fridge-emptier-react/static/css/main.d21dd3c5.css",
+    "main.js": "/fridge-emptier-react/static/js/main.595d07ac.js",
+    "index.html": "/fridge-emptier-react/index.html",
+    "main.d21dd3c5.css.map": "/fridge-emptier-react/static/css/main.d21dd3c5.css.map",
+    "main.595d07ac.js.map": "/fridge-emptier-react/static/js/main.595d07ac.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d21dd3c5.css",
+    "static/js/main.595d07ac.js"
+  ]
+}

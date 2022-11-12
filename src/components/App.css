@@ -37,6 +37,10 @@ button.submit {
   font-weight: bold;
   color: #e5c40b;
   border: solid 3px #e5c40b;
+  justify-content: center;
+  margin-top: 0.5em;
+  align-items: center;
+  margin-left: 40%
   /* filter: drop-shadow(0 0); */
   /* text-shadow:none; */
 }
@@ -97,9 +101,9 @@ body > form > .recipes-result-container {
   filter: drop-shadow(2px 2px #213839);
 }
 
-body > form > .recipes-result-container > img#looking {
+body > form > .recipes-result-container > #looking {
   height: 50px;
-  color: blue;
+  /* background-color: blue; */
   margin-top: 0px;
   align-items: center;
   justify-content: center;
