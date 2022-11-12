@@ -134,6 +134,10 @@ body > form > .recipes-result-container {
   filter: drop-shadow(2px 2px #213839);
 }
 
+#looking {
+height:50%;
+position:absolute;
+}
 
 /* body > form > .recipes-result-container > #looking {
   height: 50px;
