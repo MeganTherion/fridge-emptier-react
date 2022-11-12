@@ -2,15 +2,19 @@
 
 This is a little app made with ReactJS and Express to help empty your fridge.
 It uses the Edamam API to find recipe data.
-Add ingredients in your fridge, and check any restrictions. Have fun!
+Add ingredients in your fridge, and check any restrictions to help you find dinner tonight. Have fun!
+This app is an ongoing project -- I'm working on the styling bit by bit!
+
 This app is deployed at https://megantherion.github.io/fridge-emptier-react/
+
+https://www.youtube.com/watch?v=BQYReHvnPfc ✊
 
 ## Screenshots:
 !["start"](https://github.com/MeganTherion/fridge-emptier-react/blob/main/imgs/Screenshot%202022-11-12%20at%209.56.51%20AM.png?raw=true? "Optional Title")
 
-!["start"](https://github.com/MeganTherion/fridge-emptier-react/blob/main/imgs/Screenshot%202022-11-12%20at%209.57.34%20AM.png?raw=true "Optional Title")
+!["search with results"](https://github.com/MeganTherion/fridge-emptier-react/blob/main/imgs/Screenshot%202022-11-12%20at%209.57.34%20AM.png?raw=true "Optional Title")
 
-!["start"](https://github.com/MeganTherion/fridge-emptier-react/blob/main/imgs/Screenshot%202022-11-12%20at%209.58.35%20AM.png?raw=true "Optional Title")
+!["search with no results"](https://github.com/MeganTherion/fridge-emptier-react/blob/main/imgs/Screenshot%202022-11-12%20at%209.58.35%20AM.png?raw=true "Optional Title")
 
 
 
