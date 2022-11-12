@@ -90,17 +90,17 @@ function Form() {
         );
       })}
       <div id="buttons">
-        <img
+        <button
           id="add-button"
-          src="../favicon-32x32.png"
+          // src="../favicon-32x32.png"
           onClick={addFields}
-        ></img>     
+        >+</button>     
 
-        <img
+        <button
           id="remove-button"
-          src="../favicon2-32x32.png"
+          // src="../favicon2-32x32.png"
           onClick={(index) => removeFields(index)}
-        ></img>
+        >-</button>
       </div>
       <h1>any restrictions?</h1>
 

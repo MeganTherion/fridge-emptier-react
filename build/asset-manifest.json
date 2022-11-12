@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/fridge-emptier-react/static/css/main.d21dd3c5.css",
-    "main.js": "/fridge-emptier-react/static/js/main.595d07ac.js",
+    "main.css": "/fridge-emptier-react/static/css/main.7b8a90c7.css",
+    "main.js": "/fridge-emptier-react/static/js/main.1715a006.js",
     "index.html": "/fridge-emptier-react/index.html",
-    "main.d21dd3c5.css.map": "/fridge-emptier-react/static/css/main.d21dd3c5.css.map",
-    "main.595d07ac.js.map": "/fridge-emptier-react/static/js/main.595d07ac.js.map"
+    "main.7b8a90c7.css.map": "/fridge-emptier-react/static/css/main.7b8a90c7.css.map",
+    "main.1715a006.js.map": "/fridge-emptier-react/static/js/main.1715a006.js.map"
   },
   "entrypoints": [
-    "static/css/main.d21dd3c5.css",
-    "static/js/main.595d07ac.js"
+    "static/css/main.7b8a90c7.css",
+    "static/js/main.1715a006.js"
   ]
 }
