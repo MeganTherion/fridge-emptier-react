@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import RecipesResult from "../RecipesResult";
+import Error from "../Error";
 
 const getRecipes = async function (ingredients, restrictions) {
   console.log("getRecipes restrictions", restrictions)
@@ -18,10 +19,13 @@ const getRecipes = async function (ingredients, restrictions) {
   
 try {
   const {data: response} = await axios.request(options)
-  console.log("response", response)
-  if (response.totalResults === 0)
-  return (<div><p>"error"</p></div>)
-  else return response;
+  console.log("response", response.totalResults)
+  if (!response.totalResults) {
+    return <Error />;
+  } else {
+    return response;
+  }
+  
 }
 catch (error) {
   console.log(error)

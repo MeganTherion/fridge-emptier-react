@@ -1,12 +1,14 @@
 import getRecipes from "./helper_functions/getRecipes";
 import { useEffect, useState } from "react";
 import RecipesResult from "./RecipesResult";
+import Error from "./Error";
 
 function Form() {
   const dataArray = []; //holds ingredients from user input
   const [inputFields, setInputFields] = useState([{}]);
   const [restrictions, setRestrictions] = useState([]);
   const [recipes, setRecipes] = useState("");
+  const [isLooking, setIsLooking] = useState(true);
   const loadingGifUrl =
     "https://media.giphy.com/media/7EhiahshVQJMWngK3U/giphy.gif";
 
@@ -38,6 +40,7 @@ function Form() {
     e.preventDefault();
     getRecipes(dataArray, restrictions)
       .then((data) => {
+      setIsLooking(false);
         setRecipes(data.results[0]);
         console.log("data!", recipes);
       })
@@ -123,11 +126,19 @@ function Form() {
       <button className="submit" type="submit">
         empty my fridge
       </button>
+      <div className="recipes-result-container" id="looking">
+        {isLooking ? (
+          <img src={loadingGifUrl} />)
+          :
+         (''
+        )}
+      </div>
       <div className="recipes-result-container">
-        {recipes ? (
-          <RecipesResult {...recipes} />
+        {!recipes && isLooking === false ? (
+          
+          <Error />
         ) : (
-          <img id="looking" src={loadingGifUrl} />
+          <RecipesResult {...recipes} />
         )}
       </div>
     </form>
